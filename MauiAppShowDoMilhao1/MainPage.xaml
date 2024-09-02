@@ -29,6 +29,7 @@
         <StackLayout Orientation="Horizontal">
             <Button Text="Parar" />
             <Button Text="Proxima" Clicked="Button_Clicked_Proximo"/>
+            <Label 
         </StackLayout>
 
     </StackLayout>
