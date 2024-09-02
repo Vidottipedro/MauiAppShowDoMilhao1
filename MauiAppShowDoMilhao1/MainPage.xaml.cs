@@ -5,11 +5,18 @@ namespace ShowMilhao
 {
     public partial class MainPage : ContentPage
     {
-
+        double premio = 1000;
+        int pergunta_count = 1;
 
         public MainPage()
         {
             InitializeComponent();
+
+            this.BindingContext = App.getRendomPerguntaFacil();
+
+            lbl_nivel0
+
+
         }
 
 

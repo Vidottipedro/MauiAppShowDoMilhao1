@@ -7,6 +7,8 @@ namespace MauiAppShowDoMilhao1
 
 
         static List<Pergunta> perguntas_faceis = new()
+        static List<Pergunta> perguntas_medias = new()
+        static List<Pergunta> perguntas_sorteadas = new()
         {
             new Pergunta
             {
@@ -253,9 +255,22 @@ new Pergunta
         {
             Random r = new Random();
 
-            int sorteado = r.Next(1, perguntas_faceis.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_faceis[sorteado];
+            while (true)
+            {
+                int sorteado = r.Next(1, 20);
+
+                pergunta_sorteada= perguntas_faceis[sorteado];
+
+                if ( perguntas_sorteadas.Contains(pergunta_sorteada) )
+                    {
+                   perguntas_sorteadas.Add(pergunta_sorteada);                
+                }
+            }
+
+
+
         }
 
         static List<Pergunta> perguntas_medias = new()
@@ -528,10 +543,19 @@ new Pergunta
         {
             Random r = new Random();
 
-            int sorteado = r.Next(21, perguntas_faceis.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_faceis[sorteado];
-        }
+            while (true)
+            {
+                int sorteado = r.Next(21, 40);
+
+                pergunta_sorteada = perguntas_medias[sorteado];
+
+                if (perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                }
+            }
 
         static List<Pergunta> perguntas_dificeis = new()
         {
@@ -797,14 +821,25 @@ new Pergunta
 
         };
 
+        public static Pergunta getRandom
+
         public static Pergunta getRendomPerguntaDificeis()
         {
             Random r = new Random();
 
-            int sorteado = r.Next(41, perguntas_faceis.Count);
+            Pergunta pergunta_sorteada;
 
-            return perguntas_faceis[sorteado];
-        }
+            while (true)
+            {
+                int sorteado = r.Next(41, 60);
+
+                pergunta_sorteada = perguntas_dificeis[sorteado];
+
+                if (perguntas_sorteadas.Contains(pergunta_sorteada))
+                {
+                    perguntas_sorteadas.Add(pergunta_sorteada);
+                }
+            }
 
         public App()
         {
