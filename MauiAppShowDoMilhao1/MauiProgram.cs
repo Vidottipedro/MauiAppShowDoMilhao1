@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
+
 namespace MauiAppShowDoMilhao1
 {
     public static class MauiProgram

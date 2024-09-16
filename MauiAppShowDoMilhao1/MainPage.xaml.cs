@@ -1,5 +1,6 @@
 ﻿
 using MauiAppShowDoMilhao1;
+using Plugin.Maui.Audio;
 
 namespace ShowMilhao
 {
@@ -14,10 +15,33 @@ namespace ShowMilhao
 
             this.BindingContext = App.getRendomPerguntaFacil();
 
-            lbl_nivel0
+            lbl_nivel.Text = "Facil";
+            lbl_premio.Text = premio.ToString("C");
+            lbl_pergunta_numero.Text = pergunta_count.ToString("C");
+
+            //add som
+
+            Stream track =
+                FileSystem.OpenAppPackageFileAsync("0.mp3").Result;
+            AudioManager.Current.CreatePlayer(track).Play();
 
 
         }
+
+
+        private void toca_som()
+        {
+            string track = "";
+
+            switch(pergunta_count) {
+
+                case 1:
+                    track = "1.wav";
+                    break;
+
+                    case 2:
+        }
+ 
 
 
         private void Button_Clicked(object sender, EventArgs e)
